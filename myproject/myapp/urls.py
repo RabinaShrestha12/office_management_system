@@ -2,6 +2,7 @@ from django.urls import path
 from .view.auth_views import list_all_users,login_admin,register_admin,register_user,user_detail_crud,login_user, forgot_password, reset_password
 from .view.salary_views import trainer_salaries, trainer_salary_by_id
 from .view.trainer_views import create_trainer_profile, trainer_detail_by_id
+from .view.certificate_views import generate_certificate, certificates
 
  
 
@@ -20,5 +21,8 @@ urlpatterns = [
     path('trainer/', create_trainer_profile),
     #salary
     path('trainer-salary/', trainer_salaries),
-    path('trainer-salary/<int:salary_id>', trainer_salary_by_id)
+    path('trainer-salary/<int:salary_id>', trainer_salary_by_id),
+     #certificate
+    path('certificate/<int:cert_id>', generate_certificate),
+    path('certificate/', certificates)
     ]
