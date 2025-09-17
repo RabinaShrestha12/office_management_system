@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Trainer, TrainerSalary
+from .models import Trainer, TrainerSalary, ClassSchedule
 
 User = get_user_model()
 
@@ -22,3 +22,9 @@ class TrainerSalarySerializer(serializers.ModelSerializer):
     class Meta:
         model = TrainerSalary
         fields='__all__'
+
+
+class ClassScheduleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClassSchedule
+        fields = '__all__'
